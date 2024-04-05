@@ -124,46 +124,4 @@ def vtbuscar_IPs(api_key, ips):
             print(f'Erro ao fazer a solicitação: {e}')
             return None
 
-# Exemplo de utilização:
-
-"""
-api_key = input("Digite sua chave API: ")
-
-listaiocs = []
-ioc_item = input("Digite o IOC que quer pesquisar: ")
-listaiocs.append(ioc_item)
-
-while True:
-    
-    print("Quer adicionar mais IOCs ? y/n ou digite S para sair: ")
-    opcao = input("Sua resposta: ")
-
-    if opcao == "y":
-        ioc_item = input("Digite o IOC que quer pesquisar: ")
-        listaiocs.append(ioc_item)
-    elif opcao == "n":
-        print(Posso pesquisar para você informações sobre:
-                     
-                    a) URLs encontradas no Email, por padrão buscarei até 4 URLs.
-                    b) IPs, será buscado endereços SMTP do remetente e do servidor.
-                    c) Hashes, onde será buscado, caso haja, informações sobre determinado attachment com base em seu SHA256.
-                    d) Sair.
-        )
-        while True:    
-            opcao = str(input("Digite a opcao desejada: "))
-            if opcao == "a":
-                for iocs in listaiocs:
-                    buscar_URLs(api_key, iocs)
-                break
-            elif opcao == "b":
-                for iocs in listaiocs:
-                    buscar_IPs(api_key, iocs)
-                break
-            elif opcao == "c":
-                for iocs in listaiocs:
-                    buscar_IOCs(api_key, iocs)
-                break
-            else:
-                print("Opcao errada !")
-        break
-"""    
+# Exemplo de utilização: 

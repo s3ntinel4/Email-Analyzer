@@ -1,36 +1,39 @@
 # Email-Analyzer
                                                  
-Meu primeiro analizador de email para extração de IOCs e também pesquisa integrada dos mesmos IOCs na plataforma VirusTotal via chave API.
+My first email analyzer for extracting IOCs and also integrated search of the same IOCs on the VirusTotal platform via API key.
 
-Para utilizar a integração via VirusTotal é necessário a criação de uma conta na plataforma para uso da APIv3 do VirusTotal.
-A primeira wordlist usada no projeto atual conta com palavras em português-BR somente mas pode ser usado qualquer wordlist de sua preferência para um range maior de pesquisa no email.
-Os módulos usados na ferramenta podem ser instalados por meio do comando:
+To use the integration via VirusTotal, it is necessary to create an account on the platform to use the VirusTotal APIv3.
+
+The first wordlist used in the current project has words in Brazilian Portuguese only, but you can use any wordlist of your choice for a wider range of email searches.
+
+The modules used in the tool can be installed using the command:
 ```
 pip install requests regex optparse email hashlib urllib os
 ```
-A ferramenta irá usar por base arquivos .eml para a leitura dos emails, a formatação e extração retirada baseia-se na marcação de arquivos .eml .
+The tool will use .eml files as a base to read emails, the formatting and extraction is based on the markup of .eml files.
 
-# Uso da Ferramenta
+# Using the Tool
 
-O uso baseia na extração de campos importantes do cabeçalho e também IOCs como URLs, hashes e IPs contidos no email.
-Para uso básico com a extração de campo, IPs e URLs:
+The use is based on extracting important fields from the header and also IOCs such as URLs, hashes and IPs contained in the email.
+
+For basic use with field extraction, IPs and URLs:
 ```
 python3 email_analyzer.py -e emailFile.eml
 ```
 
-Para a pesquisa por incidências usando uma wordlist, usa-se o parâmetro "-l":
+To search for incidents using a wordlist, use the "-l" parameter:
 ```
 python3 email_analyzer.py -e emailFile.eml -l wordlist.txt
 ```
 
-Para a pesquisa por hashes, usa-se o parâmetro "-H"
+To search for hashes, use the "-H" parameter: 
 ```
 python3 email_analyzer.py -e emailFile.eml -H
 ```
 
-Por fim para a integração com a API VirusTotal, usa-se o parâmetro "-v":
+Finally, for integration with the VirusTotal API, use the "-v" parameter:
 ```
 python3 email_analyzer.py -e emailFile.eml -v
 ```
 
-OBS: Para a pesquisa por hashes na plataforma, será necessário o parâmetro "-H" para pesquisa
+NOTE: To search for hashes on the platform, the "-H" parameter will be required for the search.
